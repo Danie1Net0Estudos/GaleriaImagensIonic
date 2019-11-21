@@ -1,8 +1,9 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "br.com.danineto",
   "appName": "Camera",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
-  "cordova": {}
+  "cordova": {},
+  "linuxAndroidStudioPath": "/opt/android-studio/bin/studio.sh"
 }
