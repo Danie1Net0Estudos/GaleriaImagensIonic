@@ -3,18 +3,20 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { GaleryPage } from './galery.page';
+import { PhotoService } from '../shared/services/photo.service';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: GaleryPage }])
+    RouterModule.forChild([{ path: '', component: GaleryPage }]),
+    HttpClientModule
   ],
-  declarations: [GaleryPage]
+  declarations: [GaleryPage],
+  providers: [PhotoService]
 })
 export class GaleryPageModule {}

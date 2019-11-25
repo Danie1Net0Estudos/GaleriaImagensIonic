@@ -1,5 +1,5 @@
 # Galeria de Imagens Ionic
-Galeria de imagens desenvolvida com Ionic/Capacitor.
+Galeria de imagens com upload no servidor, desenvolvida com Ionic/Capacitor e Express/NodeJS.
 
 ## Configurando o Ambiente:
 Para testar esse projeto é necessario ter instalado as seguintes aplicações:
@@ -9,20 +9,42 @@ Para testar esse projeto é necessario ter instalado as seguintes aplicações:
 * Capacitor [(saiba como instalar)](https://capacitor.ionicframework.com/docs/getting-started)
 
 ## Testando o APP
+
 1. Faça o download ou clone do projeto:
 ```
 $ git clone https://github.com/Danie1Net0/GaleriaDeImagensIonic.git
 ```
 
-2. Instale as dependências:
+### Iniciando o Servidor
+
+2.1. Entre no diretório ***server***:
+```
+$ cd server
+```
+
+2.2. Instale as dependências do servidor:
 ```
 $ npm install
 ```
 
-3. Inicie o servidor:
+2.3. Inicie o servidor:
+```
+$ npm start
+```
+
+### Iniciando o Aplicativo
+
+3.1. Certifique-se de que está no diretório raiz e instale as dependências do aplicativo:
+```
+$ npm install
+```
+
+3.2. Inicie o servidor:
 ```
 $ ionic serve
 ```
+
+> Os uploads de imagens serão feitos no diretório ***server/uploads*** 
 
 ## Gerando APK para Android
 Para seguir os próximos passos, as instruções anteriores devem ser executadas previamente. Feito isso, siga em frente:

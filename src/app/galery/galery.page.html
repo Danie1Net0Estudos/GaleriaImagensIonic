@@ -1,15 +1,33 @@
-<ion-content>
-  <ion-grid>
-    <ion-row *ngIf="photoService.photos.length">
-      <ion-col size="6" *ngFor="let photo of photoService.photos">
-        <img [src]="photo"/>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Galeria de Fotos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content class="ion-padding">
+  <h3 *ngIf="!photoService.lengthPhotos()" class="ion-text-center">Nenhuma foto na galeria :(</h3>
+
+  <ion-list>
+    <ion-item *ngFor="let photo of photoService.getPhotos(); index as position" class="ion-text-wrap">
+      <ion-thumbnail slot="start">
+        <img [src]="photoService.getPhoto(photo.image)"/>
+      </ion-thumbnail>
+      <ion-button slot="end" fill="clear" (click)="upload()">
+        <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" (click)="photoService.delete(position)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="photoService.takePicture()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-content>
+</ion-footer>
